@@ -133,6 +133,17 @@ section.bloco{padding:72px 0;border-top:1px solid var(--fio)}
 .proj .mais{margin-top:auto;font-family:var(--mono);font-size:13px}
 .prova-titulo{padding-top:16px;border-top:1px solid var(--fio);margin-top:8px}
 .proj.prova{background:transparent}
+.galeria{grid-column:1/-1;display:flex;flex-direction:column;gap:12px;padding-top:8px;border-top:1px solid var(--fio)}
+.galeria-topo{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.trilho{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,32%);gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.trilho:focus-visible{outline:2px solid var(--acento);outline-offset:4px}
+.pagina{margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.pagina img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid var(--fio);background:#fff}
+.pagina a:hover img{border-color:var(--acento)}
+.pagina figcaption{font-size:14.5px;line-height:1.35;font-weight:600}
+.pagina figcaption .num{color:var(--acento);margin-right:4px}
+.pagina figcaption span:last-child{display:block;font-weight:400;color:var(--tinta-2);font-size:13.5px}
+@media (max-width:640px){.trilho{grid-auto-columns:82%}}
 .proj.destaque{border-color:var(--acento);box-shadow:0 0 0 1px var(--acento)}
 @media (max-width:900px){.proj{grid-template-columns:1fr;gap:20px}.cadeia{grid-template-columns:1fr}.elo + .elo{border-left:0;padding-left:0;border-top:1px solid var(--fio)}}
 
@@ -235,7 +246,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <h3>Relatórios ESG</h3>
         <p>Relatório de sustentabilidade com dupla materialidade, riscos climáticos e metas, nos padrões GRI, IFRS S1/S2 e SASB.</p>
         <ul class="entregas"><li>Matriz de dupla materialidade</li><li>Relatório redigido e diagramado</li><li>Índice GRI e SASB</li></ul>
-        <span class="onde">Exemplo: relatório da Restinga</span>
+        <a class="onde" href="#restinga" style="text-decoration:none">Exemplo: relatório da Restinga ↓</a>
       </div>
       <div class="area">
         <span class="rotulo">03</span>
@@ -327,19 +338,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </div>
       </article>
 
-      <article class="proj">
+      <article class="proj" id="restinga">
         <div class="id">
           <span class="rotulo">Nov/2026 · Projeto autoral</span>
           <h3>Relatório ESG da Restinga</h3>
           <span class="papel">Relatório de sustentabilidade completo de uma construtora fictícia da Grande Florianópolis, feito como modelo de serviço.</span>
           <div class="chips"><span class="ods" style="background:#BF8B2E">ODS 12</span><span class="ods" style="background:#3F7E44">ODS 13</span><span class="ods" style="background:#DD1367">ODS 10</span><span class="ods" style="background:var(--tinta);color:var(--chao)">ODS 18</span></div>
           <div class="chips"><span class="tag">GHG Protocol</span><span class="tag">Dupla materialidade</span><span class="tag">IFRS S2</span><span class="tag">GRI</span></div>
-          <a class="mais" href="https://claude.ai/artifact/UG5YWXJRZfqG7tSKePgiUi">Ver o relatório diagramado ↗</a>
+          <a class="mais" href="relatorio-restinga/relatorio-restinga-visual.pdf">Baixar o relatório em PDF (11 páginas, 6 MB) ↓</a>
         </div>
         <div class="cadeia">
           <div class="elo"><span class="rotulo">Contexto</span><p>Empresas médias de construção civil começam a ser cobradas por bancos e compradores, mas nem sempre têm inventário de emissões ou matriz de materialidade.</p></div>
           <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Inventário dos escopos 1, 2 e 3 com carbono incorporado por m²</li><li>Matriz de dupla materialidade com 14 temas</li><li>Riscos climáticos no formato IFRS S2, plano de transição e metas para 2030</li><li>Identidade visual e 11 páginas diagramadas</li></ul></div>
           <div class="elo resultado"><span class="rotulo">O que entrega</span><ul><li>Um modelo pronto para adaptar a empresas reais</li><li>Os <strong>18</strong> ODS cruzados com os três pilares ESG</li><li>Impactos negativos expostos com o mesmo peso dos positivos</li></ul></div>
+        </div>
+        <div class="galeria" aria-label="Páginas do relatório da Restinga">
+          <div class="galeria-topo"><span class="rotulo">Versão diagramada · 11 páginas em A4 paisagem · role para o lado</span><a class="mais" href="relatorio-restinga/relatorio-restinga-visual.pdf">PDF completo ↓</a></div>
+          <div class="trilho" tabindex="0"><figure class="pagina"><a href="relatorio-restinga/pagina-01.jpg"><img src="relatorio-restinga/pagina-01.jpg" width="1287" height="910" loading="lazy" alt="Página 1 do relatório da Restinga: Capa"></a><figcaption><span class="num">01</span> Capa<span>Construir com o lugar</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-02.jpg"><img src="relatorio-restinga/pagina-02.jpg" width="1287" height="910" loading="lazy" alt="Página 2 do relatório da Restinga: Destaques"></a><figcaption><span class="num">02</span> Destaques<span>O ano em oito números</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-03.jpg"><img src="relatorio-restinga/pagina-03.jpg" width="1287" height="910" loading="lazy" alt="Página 3 do relatório da Restinga: Perfil"></a><figcaption><span class="num">03</span> Perfil<span>Cadeia de valor e emissões</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-04.jpg"><img src="relatorio-restinga/pagina-04.jpg" width="1287" height="910" loading="lazy" alt="Página 4 do relatório da Restinga: Dupla materialidade"></a><figcaption><span class="num">04</span> Dupla materialidade<span>Matriz com 14 temas</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-05.jpg"><img src="relatorio-restinga/pagina-05.jpg" width="1287" height="910" loading="lazy" alt="Página 5 do relatório da Restinga: Emissões"></a><figcaption><span class="num">05</span> Emissões<span>Inventário pelo GHG Protocol</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-06.jpg"><img src="relatorio-restinga/pagina-06.jpg" width="1287" height="910" loading="lazy" alt="Página 6 do relatório da Restinga: Transição e riscos"></a><figcaption><span class="num">06</span> Transição e riscos<span>Plano de transição e IFRS S2</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-07.jpg"><img src="relatorio-restinga/pagina-07.jpg" width="1287" height="910" loading="lazy" alt="Página 7 do relatório da Restinga: Pessoas e ODS 18"></a><figcaption><span class="num">07</span> Pessoas e ODS 18<span>Equidade e segurança</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-08.jpg"><img src="relatorio-restinga/pagina-08.jpg" width="1287" height="910" loading="lazy" alt="Página 8 do relatório da Restinga: Ambiental e governança"></a><figcaption><span class="num">08</span> Ambiental e governança<span>Resíduos, água, biodiversidade</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-09.jpg"><img src="relatorio-restinga/pagina-09.jpg" width="1287" height="910" loading="lazy" alt="Página 9 do relatório da Restinga: ODS × ESG"></a><figcaption><span class="num">09</span> ODS × ESG<span>Os 18 ODS por pilar</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-10.jpg"><img src="relatorio-restinga/pagina-10.jpg" width="1287" height="910" loading="lazy" alt="Página 10 do relatório da Restinga: Metas 2030"></a><figcaption><span class="num">10</span> Metas 2030<span>Ritmo de 12 metas</span></figcaption></figure><figure class="pagina"><a href="relatorio-restinga/pagina-11.jpg"><img src="relatorio-restinga/pagina-11.jpg" width="1287" height="910" loading="lazy" alt="Página 11 do relatório da Restinga: Contato"></a><figcaption><span class="num">11</span> Contato<span>Chamada para o serviço</span></figcaption></figure></div>
         </div>
       </article>
 
