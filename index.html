@@ -72,6 +72,17 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-0
 .livro .desc{font-size:15px;line-height:1.4;color:var(--tinta-2)}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:32px}}
 
+/* credentials */
+.credenciais{padding:56px 0 40px;border-top:1px solid var(--fio)}
+.cred-grade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:12px;border-top:2px solid var(--tinta)}
+.cred{display:flex;flex-direction:column;gap:4px;padding:16px 20px 4px 0}
+.cred + .cred{padding-left:20px;border-left:1px solid var(--fio)}
+.cred .inst{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.05;letter-spacing:-0.02em}
+.cred .curso{font-size:16px;line-height:1.4;color:var(--tinta-2)}
+.cred .quando{font-family:var(--mono);font-size:12.5px;color:var(--tinta-2)}
+@media (max-width:860px){.cred-grade{grid-template-columns:repeat(2,minmax(0,1fr))}.cred:nth-child(3){padding-left:0;border-left:0}.cred{padding-bottom:14px}}
+@media (max-width:480px){.cred-grade{grid-template-columns:1fr}.cred + .cred{padding-left:0;border-left:0;border-top:1px solid var(--fio)}}
+
 /* ODS band */
 .ods-faixa{padding:12px 0 56px}
 .faixa{display:grid;grid-template-columns:repeat(18,minmax(0,1fr));gap:4px}
@@ -94,6 +105,9 @@ section.bloco{padding:72px 0;border-top:1px solid var(--fio)}
 .area:last-child{border-right:0}
 .area h3{font-size:21px;line-height:1.1;font-weight:700}
 .area p{margin:0;font-size:15.5px;line-height:1.5;color:var(--tinta-2)}
+.entregas{list-style:none;margin:4px 0 0;padding:0;font-family:var(--mono);font-size:12.5px;line-height:1.45}
+.entregas li{padding:5px 0;border-top:1px solid var(--fio)}
+.entregas li::before{content:"→ ";color:var(--acento)}
 .area .onde{margin-top:auto;padding-top:12px;border-top:1px dashed var(--fio);font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--tinta-2)}
 @media (max-width:1000px){.areas{grid-template-columns:repeat(2,minmax(0,1fr))}.area{border-bottom:1px solid var(--fio)}}
 @media (max-width:560px){.areas{grid-template-columns:1fr}.area{border-right:0}}
@@ -117,6 +131,8 @@ section.bloco{padding:72px 0;border-top:1px solid var(--fio)}
 .elo.resultado p,.elo.resultado li{color:var(--tinta)}
 .elo.resultado strong{font-family:var(--mono);font-weight:500;color:var(--acento)}
 .proj .mais{margin-top:auto;font-family:var(--mono);font-size:13px}
+.prova-titulo{padding-top:16px;border-top:1px solid var(--fio);margin-top:8px}
+.proj.prova{background:transparent}
 .proj.destaque{border-color:var(--acento);box-shadow:0 0 0 1px var(--acento)}
 @media (max-width:900px){.proj{grid-template-columns:1fr;gap:20px}.cadeia{grid-template-columns:1fr}.elo + .elo{border-left:0;padding-left:0;border-top:1px solid var(--fio)}}
 
@@ -169,7 +185,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <a class="marca" href="#inicio">Gustavo Marques<span>.</span></a>
     <nav class="nav" aria-label="Seções">
-      <a href="#atuacao">Atuação</a>
+      <a href="#servicos">Serviços</a>
       <a href="#projetos">Projetos</a>
       <a href="#metodos">Métodos</a>
       <a href="#trajetoria">Trajetória</a>
@@ -185,17 +201,75 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div>
       <span class="rotulo">ESG · ODS · Mensuração de impacto · Inovação · Projetos — Florianópolis, SC</span>
       <h1 style="margin-top:18px">Projetos de impacto <em>que dá para medir.</em></h1>
-      <p class="lead">Sou administrador pela UFSC e trabalho onde gestão de projetos encontra sustentabilidade: estruturo iniciativas socioambientais, conecto universidade, empresas, governo e sociedade civil, e transformo o que elas fazem em indicadores, relatórios e decisões.</p>
+      <p class="lead">Sou administrador pela UFSC, com formação internacional em sustentabilidade. Ajudo empresas, organizações sociais e negócios de impacto a medir o que fazem e a contar isso bem: relatórios ESG, mensuração de impacto, alinhamento aos ODS e gestão de projetos socioambientais.</p>
       <div class="acoes">
         <a class="btn cheio" href="#contato">Vamos conversar</a>
-        <a class="btn" href="#projetos">Ver projetos</a>
+        <a class="btn" href="#servicos">Ver serviços</a>
       </div>
     </div>
     <div class="livro" aria-label="Alguns resultados">
-      <div class="linha"><span class="valor">6→22</span><span class="desc">pessoas no time da Enactus UFSC na minha gestão (+266%), com 4× mais inscritos</span></div>
-      <div class="linha"><span class="valor">Top 5</span><span class="desc">da Rede Enactus Brasil, com 2 projetos premiados</span></div>
-      <div class="linha"><span class="valor">12</span><span class="desc">projetos simultâneos sob controle financeiro no Instituto Çarakura</span></div>
-      <div class="linha"><span class="valor">3</span><span class="desc">estados unidos no TRES, encontro que idealizei em 2025 e coordenei em 2026</span></div>
+      <div class="linha"><span class="valor">12</span><span class="desc">projetos simultâneos com controle financeiro e prestação de contas no Instituto Çarakura</span></div>
+      <div class="linha"><span class="valor">5 + 6</span><span class="desc">financiadores e comunidades recebendo relatórios visuais de resultado</span></div>
+      <div class="linha"><span class="valor">2</span><span class="desc">edições seguidas do Prêmio Inovação Social WASH Amanco Wavin com a Tekoá</span></div>
+      <div class="linha"><span class="valor">+29,49%</span><span class="desc">de IDT ao ano na gestão que liderei na Enactus UFSC</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bloco" id="servicos">
+  <div class="wrap">
+    <div class="cabeca">
+      <h2>O que ofereço hoje</h2>
+      <p>Serviços para empresas, organizações sociais e negócios de impacto que precisam medir, reportar e gerir seus resultados socioambientais. Cada um termina num entregável concreto.</p>
+    </div>
+    <div class="areas">
+      <div class="area">
+        <span class="rotulo">01</span>
+        <h3>Mensuração de impacto</h3>
+        <p>Teoria da mudança, SROI e indicadores que cabem na rotina de quem executa e convencem quem financia.</p>
+        <ul class="entregas"><li>Cálculo de SROI</li><li>Teoria da mudança</li><li>Painel de indicadores</li></ul>
+        <span class="onde">Exemplo: calculadora de SROI da Tekoá</span>
+      </div>
+      <div class="area">
+        <span class="rotulo">02</span>
+        <h3>Relatórios ESG</h3>
+        <p>Relatório de sustentabilidade com dupla materialidade, riscos climáticos e metas, nos padrões GRI, IFRS S1/S2 e SASB.</p>
+        <ul class="entregas"><li>Matriz de dupla materialidade</li><li>Relatório redigido e diagramado</li><li>Índice GRI e SASB</li></ul>
+        <span class="onde">Exemplo: relatório da Restinga</span>
+      </div>
+      <div class="area">
+        <span class="rotulo">03</span>
+        <h3>Inventário de emissões</h3>
+        <p>Escopos 1, 2 e 3 pelo GHG Protocol e pelo Programa Brasileiro GHG Protocol, com metas e plano de redução.</p>
+        <ul class="entregas"><li>Inventário de GEE</li><li>Fontes e intensidades</li><li>Plano de transição</li></ul>
+        <span class="onde">Exemplo: inventário da Restinga</span>
+      </div>
+      <div class="area">
+        <span class="rotulo">04</span>
+        <h3>Alinhamento aos ODS</h3>
+        <p>Conexão de projetos e temas materiais aos 18 ODS, incluindo o ODS 18 de igualdade étnico-racial.</p>
+        <ul class="entregas"><li>Mapa de contribuição aos ODS</li><li>Metas e indicadores por ODS</li></ul>
+        <span class="onde">Restinga · Tekoá</span>
+      </div>
+      <div class="area">
+        <span class="rotulo">05</span>
+        <h3>Gestão de projetos e parcerias</h3>
+        <p>Estruturação de portfólio, escopo, indicadores e editais, e articulação com universidades, empresas e governo.</p>
+        <ul class="entregas"><li>Plano de projeto e cronograma</li><li>Proposta para editais</li><li>Mapa de parceiros</li></ul>
+        <span class="onde">Çarakura · Enactus UFSC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="credenciais" aria-label="Formação internacional em sustentabilidade">
+  <div class="wrap">
+    <span class="rotulo">Formação internacional em sustentabilidade</span>
+    <div class="cred-grade">
+      <div class="cred"><span class="inst">Duke University</span><span class="curso">Impact Measurement &amp; Management for the SDGs</span><span class="quando">fev/2024</span></div>
+      <div class="cred"><span class="inst">Wharton</span><span class="curso">ESG Risks and Opportunities</span><span class="quando">jan/2024</span></div>
+      <div class="cred"><span class="inst">Universidad de los Andes</span><span class="curso">Marketing Verde</span><span class="quando">jan/2024</span></div>
+      <div class="cred"><span class="inst">Climate Reality Project Brasil</span><span class="curso">Financiamento Climático</span><span class="quando">out/2024</span></div>
     </div>
   </div>
 </section>
@@ -229,100 +303,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<section class="bloco" id="atuacao">
-  <div class="wrap">
-    <div class="cabeca">
-      <h2>Cinco frentes, um mesmo método</h2>
-      <p>Em todas elas faço a mesma pergunta: o que precisa mudar, como vamos saber se mudou e quem precisa estar junto para isso acontecer.</p>
-    </div>
-    <div class="areas">
-      <div class="area">
-        <span class="rotulo">01</span>
-        <h3>ESG</h3>
-        <p>Inventário de emissões, dupla materialidade e relatórios de sustentabilidade nos padrões GRI, IFRS S1/S2 e SASB.</p>
-        <span class="onde">Relatório-exemplo Restinga · cursos Wharton e Club ESG</span>
-      </div>
-      <div class="area">
-        <span class="rotulo">02</span>
-        <h3>ODS</h3>
-        <p>Conexão de temas materiais e projetos aos 18 ODS, incluindo o ODS 18 de igualdade étnico-racial.</p>
-        <span class="onde">Enactus UFSC · Movimento ODS · Tekoá</span>
-      </div>
-      <div class="area">
-        <span class="rotulo">03</span>
-        <h3>Mensuração de impacto</h3>
-        <p>Teoria da mudança, SROI e indicadores que cabem na rotina de quem executa e convencem quem financia.</p>
-        <span class="onde">Tekoá · Çarakura · curso Duke (IMM for the SDGs)</span>
-      </div>
-      <div class="area">
-        <span class="rotulo">04</span>
-        <h3>Ecossistemas de inovação</h3>
-        <p>Parcerias entre universidade, empresas, governo, sociedade civil e meio ambiente, na lógica da quíntupla hélice.</p>
-        <span class="onde">TCC · TRES · Impact Hub · LINC Social</span>
-      </div>
-      <div class="area">
-        <span class="rotulo">05</span>
-        <h3>Gestão de projetos</h3>
-        <p>Portfólio, escopo, indicadores e editais, com Scrum e Kanban adaptados a times pequenos e voluntários.</p>
-        <span class="onde">PMO Enactus · GFE no Çarakura · cursos USP e Google</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="bloco" id="projetos">
   <div class="wrap">
     <div class="cabeca">
-      <h2>Projetos, lidos como cadeias de impacto</h2>
+      <h2>Trabalhos, lidos como cadeias de impacto</h2>
       <p>Cada projeto vem em três elos: o contexto, o que eu fiz e o que mudou. É o mesmo raciocínio de uma teoria da mudança, aplicado ao meu próprio trabalho.</p>
     </div>
     <div class="projetos">
 
       <article class="proj destaque">
         <div class="id">
-          <span class="rotulo">Out/2025 – atual · Fundador</span>
-          <h3>Tekoá</h3>
-          <span class="papel">Negócio de impacto em soluções baseadas na natureza para água, saneamento e resiliência territorial.</span>
-          <div class="chips">
-            <span class="ods" style="background:#26BDE2">ODS 6</span><span class="ods" style="background:#FD9D24">ODS 11</span><span class="ods" style="background:#3F7E44">ODS 13</span><span class="ods" style="background:#0A97D9">ODS 14</span><span class="ods" style="background:#56C02B">ODS 15</span>
-          </div>
-          <div class="chips"><span class="tag">SROI</span><span class="tag">SbN</span><span class="tag">Economia azul</span></div>
-          <a class="mais" href="https://gustavo-marques-da-silva.github.io/Portfolio/">Calculadora de SROI no portfólio de IA ↗</a>
+          <span class="rotulo">2026 · Ferramenta autoral</span>
+          <h3>Calculadora de SROI</h3>
+          <span class="papel">Ferramenta de mensuração do retorno social do investimento, criada para a tese de impacto da Tekoá.</span>
+          <div class="chips"><span class="ods" style="background:#26BDE2">ODS 6</span><span class="ods" style="background:#3F7E44">ODS 13</span><span class="ods" style="background:#19486A">ODS 17</span></div>
+          <div class="chips"><span class="tag">SROI</span><span class="tag">Teoria da mudança</span><span class="tag">Indicadores</span></div>
+          <a class="mais" href="https://gustavo-marques-da-silva.github.io/Portfolio/">Usar a calculadora no portfólio de IA ↗</a>
         </div>
         <div class="cadeia">
-          <div class="elo"><span class="rotulo">Contexto</span><p>Nasceu como projeto de extensão na Enactus UFSC e virou negócio social, apostando em soluções baseadas na natureza para água e saneamento.</p></div>
-          <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Desenvolvi o jardim filtrante como primeiro produto</li><li>Ampliei para paisagismo, saneamento ecológico, manguezais, fitorremediação e pescadores</li><li>Estruturei a tese de impacto com SROI</li></ul></div>
-          <div class="elo resultado"><span class="rotulo">O que mudou</span><ul><li><strong>3</strong> parceiros, entre pesquisa e parques temáticos</li><li><strong>2</strong> edições seguidas no Prêmio Inovação Social WASH Amanco Wavin</li><li>Próximo passo: jardins de chuva e telhados verdes para construção civil e setor público</li></ul></div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <div class="id">
-          <span class="rotulo">Set/2024 – set/2026 · Presidente</span>
-          <h3>Enactus UFSC Florianópolis</h3>
-          <span class="papel">Grupo de extensão de empreendedorismo social. Dois ciclos na diretoria executiva.</span>
-          <div class="chips"><span class="ods" style="background:#C5192D">ODS 4</span><span class="ods" style="background:#A21942">ODS 8</span><span class="ods" style="background:#19486A">ODS 17</span></div>
-          <div class="chips"><span class="tag">Quíntupla hélice</span><span class="tag">Stakeholders</span><span class="tag">Scrum</span></div>
-        </div>
-        <div class="cadeia">
-          <div class="elo"><span class="rotulo">Contexto</span><p>Um time de 6 pessoas quando assumi a diretoria executiva, num ecossistema de inovação rico em Florianópolis.</p></div>
-          <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Conectei o grupo a Impact Hub, Movimento ODS, LINC Social, PMI-SC, Grupo Mittos, GESAD, Amanco Wavin e Credicitrus</li><li>Idealizei o TRES 2025 com UFRGS e UEM e coordenei a edição 2026, sediada na UDESC</li><li>Coordenei o storytelling em hackathons que captaram recursos com Credicitrus, Amanco Wavin e inpEV</li></ul></div>
-          <div class="elo resultado"><span class="rotulo">O que mudou</span><ul><li>Time de <strong>6 → 22</strong> pessoas e <strong>4×</strong> mais inscritos</li><li><strong>Top 5</strong> da Rede Enactus Brasil</li><li>IDT <strong>+29,49%</strong> ao ano</li><li><strong>2</strong> projetos premiados: Top 10 Cooperando por um Amanhã Melhor e Top 3 Inovação Social, categoria Gota</li></ul></div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <div class="id">
-          <span class="rotulo">Set/2024 – jun/2026 · Assistente administrativo</span>
-          <h3>Instituto Çarakura</h3>
-          <span class="papel">Organização socioambiental com projetos em comunidades de três municípios.</span>
-          <div class="chips"><span class="ods" style="background:#FD9D24">ODS 11</span><span class="ods" style="background:#00689D">ODS 16</span><span class="ods" style="background:#19486A">ODS 17</span></div>
-          <div class="chips"><span class="tag">Gestão financeira</span><span class="tag">Prestação de contas</span><span class="tag">Geodados</span></div>
-        </div>
-        <div class="cadeia">
-          <div class="elo"><span class="rotulo">Contexto</span><p>Doze projetos ao mesmo tempo, sem orçamento institucional fixo, e pendências fiscais antigas travando a captação de recursos públicos.</p></div>
-          <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Criei a metodologia GFE (Gestão Financeira Empresarial) e reestruturei a área financeira</li><li>Montei relatórios visuais para financiadores e comunidades</li><li>Mapeei moradores no Google Earth para a equipe de campo</li></ul></div>
-          <div class="elo resultado"><span class="rotulo">O que mudou</span><ul><li><strong>12</strong> projetos com controle financeiro simultâneo</li><li><strong>5</strong> financiadores e <strong>6</strong> comunidades com prestação de contas visual</li><li>Pendências regularizadas, <strong>destravando</strong> a captação de projetos públicos</li></ul></div>
+          <div class="elo"><span class="rotulo">Contexto</span><p>Negócios de impacto e organizações sociais precisam mostrar a financiadores quanto valor social geram para cada real investido.</p></div>
+          <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Transformei a metodologia SROI em uma calculadora</li><li>Apliquei à Tekoá para sustentar sua tese de impacto</li></ul></div>
+          <div class="elo resultado"><span class="rotulo">O que entrega</span><ul><li>Um retorno social calculado de forma transparente</li><li>Uma ferramenta que adapto a outros projetos e organizações</li></ul></div>
         </div>
       </article>
 
@@ -344,16 +345,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
       <article class="proj">
         <div class="id">
-          <span class="rotulo">Out/2023 – ago/2024 · Diretor de Projetos (PMO)</span>
-          <h3>Portfólio de projetos da Enactus</h3>
-          <span class="papel">Gestão do portfólio, de indicadores e da inscrição em editais e prêmios.</span>
-          <div class="chips"><span class="ods" style="background:#FD6925">ODS 9</span><span class="ods" style="background:#19486A">ODS 17</span></div>
-          <div class="chips"><span class="tag">PMO</span><span class="tag">Editais</span><span class="tag">Kanban</span></div>
+          <span class="rotulo">Out/2025 – atual · Fundador</span>
+          <h3>Tekoá</h3>
+          <span class="papel">Negócio de impacto em soluções baseadas na natureza para água, saneamento e resiliência territorial.</span>
+          <div class="chips">
+            <span class="ods" style="background:#26BDE2">ODS 6</span><span class="ods" style="background:#FD9D24">ODS 11</span><span class="ods" style="background:#3F7E44">ODS 13</span><span class="ods" style="background:#0A97D9">ODS 14</span><span class="ods" style="background:#56C02B">ODS 15</span>
+          </div>
+          <div class="chips"><span class="tag">SROI</span><span class="tag">SbN</span><span class="tag">Economia azul</span></div>
+          <a class="mais" href="#projetos">Ver a calculadora de SROI ↑</a>
         </div>
         <div class="cadeia">
-          <div class="elo"><span class="rotulo">Contexto</span><p>Portfólio de projetos sociais do grupo, com editais e prêmios como principal via de reconhecimento e recursos.</p></div>
-          <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Defini metodologias, escopo e indicadores por projeto</li><li>Coordenei pesquisa e desenvolvimento e benchmarking</li><li>Antes, como assessor, reestruturei a área e montei equipes por mapeamento de competências</li></ul></div>
-          <div class="elo resultado"><span class="rotulo">O que mudou</span><ul><li><strong>Top 10</strong> Amanco Wavin e <strong>Top 20</strong> inpEV</li><li><strong>3</strong> projetos pré-selecionados no BIC</li><li><strong>2</strong> selecionados no SINOVA/UFSC</li></ul></div>
+          <div class="elo"><span class="rotulo">Contexto</span><p>Nasceu como projeto de extensão na Enactus UFSC e virou negócio social, apostando em soluções baseadas na natureza para água e saneamento.</p></div>
+          <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Desenvolvi o jardim filtrante como primeiro produto</li><li>Ampliei para paisagismo, saneamento ecológico, manguezais, fitorremediação e pescadores</li><li>Estruturei a tese de impacto com SROI</li></ul></div>
+          <div class="elo resultado"><span class="rotulo">O que mudou</span><ul><li><strong>3</strong> parceiros, entre pesquisa e parques temáticos</li><li><strong>2</strong> edições seguidas no Prêmio Inovação Social WASH Amanco Wavin</li><li>Próximo passo: jardins de chuva e telhados verdes para construção civil e setor público</li></ul></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="id">
+          <span class="rotulo">Set/2024 – jun/2026 · Assistente administrativo</span>
+          <h3>Instituto Çarakura</h3>
+          <span class="papel">Organização socioambiental com projetos em comunidades de três municípios.</span>
+          <div class="chips"><span class="ods" style="background:#FD9D24">ODS 11</span><span class="ods" style="background:#00689D">ODS 16</span><span class="ods" style="background:#19486A">ODS 17</span></div>
+          <div class="chips"><span class="tag">Gestão financeira</span><span class="tag">Prestação de contas</span><span class="tag">Geodados</span></div>
+        </div>
+        <div class="cadeia">
+          <div class="elo"><span class="rotulo">Contexto</span><p>Doze projetos ao mesmo tempo, sem orçamento institucional fixo, e pendências fiscais antigas travando a captação de recursos públicos.</p></div>
+          <div class="elo"><span class="rotulo">O que eu fiz</span><ul><li>Criei a metodologia GFE (Gestão Financeira Empresarial) e reestruturei a área financeira</li><li>Montei relatórios visuais para financiadores e comunidades</li><li>Mapeei moradores no Google Earth para a equipe de campo</li></ul></div>
+          <div class="elo resultado"><span class="rotulo">O que mudou</span><ul><li><strong>12</strong> projetos com controle financeiro simultâneo</li><li><strong>5</strong> financiadores e <strong>6</strong> comunidades com prestação de contas visual</li><li>Pendências regularizadas, <strong>destravando</strong> a captação de projetos públicos</li></ul></div>
         </div>
       </article>
 
@@ -371,7 +390,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <div class="elo resultado"><span class="rotulo">Uso prático</span><p>É a base de como articulo parcerias na Enactus e na Tekoá e de como sustento teses de impacto diante de financiadores.</p></div>
         </div>
       </article>
-
+      <div class="prova-titulo"><span class="rotulo">Prova de execução</span></div>
+      <article class="proj prova">
+        <div class="id">
+          <span class="rotulo">Jun/2023 – set/2026 · Assessor, Diretor de Projetos e Presidente</span>
+          <h3>Enactus UFSC Florianópolis</h3>
+          <span class="papel">Onde pratiquei, por três anos, os métodos que hoje ofereço como serviço.</span>
+          <div class="chips"><span class="ods" style="background:#C5192D">ODS 4</span><span class="ods" style="background:#A21942">ODS 8</span><span class="ods" style="background:#19486A">ODS 17</span></div>
+          <div class="chips"><span class="tag">PMO</span><span class="tag">Editais</span><span class="tag">Parcerias</span></div>
+        </div>
+        <div class="cadeia">
+          <div class="elo"><span class="rotulo">Gestão de projetos</span><p>Como Diretor de Projetos, organizei portfólio, escopo e indicadores: Top 10 Amanco Wavin, Top 20 inpEV, 3 pré-selecionados no BIC e 2 selecionados no SINOVA/UFSC.</p></div>
+          <div class="elo"><span class="rotulo">Ecossistema</span><p>Como presidente, conectei o grupo a Impact Hub, Movimento ODS, LINC Social e PMI-SC, e idealizei o TRES, que uniu três estados em 2025 e 2026.</p></div>
+          <div class="elo resultado"><span class="rotulo">Resultado</span><ul><li>IDT <strong>+29,49%</strong> ao ano</li><li><strong>Top 5</strong> da Rede Enactus Brasil</li><li><strong>2</strong> projetos premiados em 2025–26</li></ul></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
